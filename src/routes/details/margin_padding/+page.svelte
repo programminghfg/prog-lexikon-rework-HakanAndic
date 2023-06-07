@@ -1,178 +1,241 @@
 <script>
-import csspad from '$lib/img/csspad.png';
-import divPad from '$lib/img/divPad.png';
-import divPad1 from '$lib/img/divPad1.png';
-import divPad2 from '$lib/img/divPad2.png';
-import MarginPadding from '$lib/img/MarginPadding.png';
-import padding from '$lib/img/padding.png';
+    let navLinks = [
+        { label: "Home", url: "#" },
+        { label: "Thema1", url: "#" },
+        { label: "Thema2", url: "#" },
+        { label: "Thema3", url: "#" },
+    ];
+
+    let sources = [
+        { label: "Quelle1", url: "#" },
+        { label: "Quelle2", url: "#" },
+        { label: "Quelle3", url: "#" },
+    ];
 </script>
 
-<a href="/">Home</a>
-<div class="site">
-        <div class="content">
-               
-                   
-<html lang="en">
+<div class="header">
+    <h1>Wiki</h1>
+    <p>Margin & Padding</p>
+</div>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/mobile.css">
-    <link rel="stylesheet" type="text/css" href="fonts/stylesheet.css">
+<div class="topnav">
+    <a href="../../index.html">Home</a>
+    <a href="#">Link</a>
+    <a href="#">Link</a>
+    <a href="#" style="float:right">Link</a>
+</div>
 
-    <title>Margin & Padding</title>
-</head>
-
-<body>
-    <div id="wrapper">
-        <header>Margin & Padding</header>
-        <nav>
-            <ul class="nav-links">
-                <li class="nav-item"><a href="../index.html">Home</a></li>
-                <li class="nav-item"><a href="#">Grundlegendes</a></li>
-                <li class="nav-item"><a href="#">Unterkategorien</a></li>
-                <li class="nav-item"><a href="#">Responsive</a></li>
-            </ul>
-        </nav>
-        <aside>
-            <img src={MarginPadding} alt=Margin id="pic7">
-        </aside>
-        <div id="dscbtn">
-            <h1>Margin</h1>
-            In HTML und CSS bezieht sich der Begriff "Margin" auf den Abstand zwischen den Rändern eines Elements und
-            den Rändern des umgebenden Elements.
-            Der Margin kann entweder auf der oberen, unteren, linken oder rechten Seite des Elements angewendet werden
-            oder auf alle vier Seiten gleichzeitig.
-            <br><br>
-            In CSS kannst du den Margin eines Elements mithilfe der Eigenschaften "margin-top", "margin-bottom",
-            "margin-left" und "margin-right" festlegen.
-            Du kannst entweder eine feste Größe wie z.B. "10px" oder eine relative Größe wie z.B. "10%" angeben. Wenn du
-            den Margin auf alle vier Seiten gleichzeitig anwenden möchtest, kannst du die Kurzschreibweise "margin"
-            verwenden, gefolgt von den Werten für die oberen, rechten, unteren und linken Ränder in dieser Reihenfolge.
-            <br><br>
-
-            <h1>Padding</h1>
-            In HTML und CSS bezieht sich der Begriff "Padding" auf den Abstand zwischen dem Inhalt eines Elements und
-            dem Rand des Elements.
-            Das Padding kann entweder auf der oberen, unteren, linken oder rechten Seite des Elements angewendet werden
-            oder auf alle vier Seiten gleichzeitig.
-            <br><br>
-            In CSS kannst du das Padding eines Elements mithilfe der Eigenschaften "padding-top", "padding-bottom",
-            "padding-left" und "padding-right" festlegen.
-            Du kannst entweder eine feste Größe wie z.B. "10px" oder eine relative Größe wie z.B. "10%" angeben. Wenn du
-            das Padding auf alle vier Seiten gleichzeitig anwenden möchtest,
-            kannst du die Kurzschreibweise "padding" verwenden, gefolgt von den Werten für die oberen, rechten, unteren
-            und linken Ränder in dieser Reihenfolge.
-            <br><br>
-
-
+<div class="row">
+    <div class="leftcolumn">
+        <div class="card">
+            <h2>Nav Links</h2>
+            {#each navLinks as link}
+                <p><a href={link.url}>{link.label}</a></p>
+            {/each}
         </div>
-       
-        <footer>
-            <ul class="ftr-links">
-                <li class="ftr-item"><a href="#">Impressum</a></li>
-                <li class="ftr-item"><a href="#">Kontakt</a></li>
-                <li class="ftr-item"><a href="#">Datenschutz</a></li>
-            </ul>
-        </footer>
+        <div class="card">
+            <h3>Quellen</h3>
+            {#each sources as source}
+                <p><a href={source.url}>{source.label}</a></p>
+            {/each}
+        </div>
+        <div class="card">
+            <h3>Follow Me</h3>
+            <p>Alica Hahnau</p>
+            <p />
+        </div>
     </div>
-</body>
-</div>
+    <div class="rightcolumn">
+        <div class="twomiddle">
+            <h2 />
+            <h5 />
+            <div class="imgpadding" style="height:200px;" />
+            <p />
+            <p />
+        </div>
+        <div class="twomiddle">
+            <h2>Definition</h2>
+            <h5>Die Begriffe Margin und Padding</h5>
+            <p>
+                stammen aus dem CSS. Mit dessen Hilfe werden die
+                unterschiedlichen Elemente wie Text, Überschriften, Links,
+                Buttons und Sektionen gestaltet. Eben alle Elemente, aus denen
+                deine Homepage besteht.
+            </p>
+        </div>
+        <div class="onemiddle">
+            <p>
+                Das Boxmodell definiert CSS margin als Abstand, padding als
+                Polster und einen Rahmen border um das Element. Margin legt
+                einen Abstand gegen benachbarte Elemente fest (z.B. den
+                vertikalen Abstand zweier div-Elemente im Layout einer Webseite)
+                und auch den Abstand vom umfassenden Element.
+            </p>
+        </div>
+        <div class="threemiddle">
+            <h2>Padding</h2>
+            <h5>Was ist Padding</h5>
+            <p>
+                Die CSS-Eigenschaft padding beschreibt den Innenabstand eines
+                Elementes zu seinem Rahmen. Die optische Polsterung kann dabei
+                für alle vier Seiten des Elementes (top, right, bottom, left)
+                festgelegt werden. Die Werte werden meist in Pixeln oder Prozent
+                angeben.
+            </p>
+        </div>
+        <div class="threemiddle">
+            <div class="imgmargin" style="height:200px;" />
+        </div>
+        <div class="threemiddle">
+            <h2>Margin</h2>
+            <h5>Was macht Margin</h5>
+            <p>
+                Mit Margin können Sie einen einheitlichen Rand/Abstand für oben,
+                unten, links und rechts bestimmen. Erlaubt sind ein bis vier
+                numerische Angaben. Eine Angabe bedeutet: alle vier Ränder
+                erhalten den gleichen Abstand/Rand.
+            </p>
+        </div>
+    </div>
 </div>
 
+<div class="footer">
+    <h2>Erstellt und Verwaltet von Alica Hahnau&#169</h2>
+</div>
 
 <style>
-    *{
-    opacity: 1;
-    color: white;
-    background-color: #333333;
-    font-family: 'Open Sans', sans-serif;
+    body {
+        font-family: Arial;
+        padding: 10px;
+        background: #f1f1f1;
+    }
 
-}
+    /* Header/Blog Title */
+    .header {
+        padding: 30px;
+        text-align: center;
+        background: white;
+    }
 
-#wrapper{
-    display: grid;
-    width: 2000px;
-    margin: auto;
-    grid-template-columns: repeat(6,1fr);
-    grid-template-rows: 120px 50px 600px 100px 40px 70px;
-    grid-template-areas: 
-        "hdr hdr hdr hdr hdr hdr"
-        "nv nv nv nv nv nv"
-        "dscbtn dscbtn dscbtn dscbtn asd asd"
-        "pic1 pic2 pic3 pic4 pic5 pic6"
-        "tag1 tag2 tag3 tag4 tag5 tag6"
-        "ftr ftr ftr ftr ftr ftr";
-}
+    .header h1 {
+        font-size: 50px;
+    }
 
-header {
-    font-weight: bold;
-    background-color: #333333;
-    padding: 10px;
-    grid-area: hdr;
-    font-size: 50pt;
-}
+    /* Style the top navigation bar */
+    .topnav {
+        overflow: hidden;
+        background-color: #333;
+    }
 
-nav {
-    margin-left: 0px;
-    margin: 0px;
-    background-color: #333333;
-    grid-area: nv;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    /* Style the topnav links */
+    .topnav a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
 
-}
+    /* Change color on hover */
+    .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+    }
 
-.nav-links {
-    margin-left: 0;
-    list-style: none;
-    display: flex;
-    justify-content: left;
-    background-color: #333333;
+    /* Create two unequal columns that floats next to each other */
+    /* Left column */
+    .leftcolumn {
+        float: left;
+        width: 25%;
+        background-color: #f1f1f1;
+        padding-right: 20px;
+    }
 
-}
+    /* Right column */
+    .rightcolumn {
+        float: left;
+        width: 75%;
+    }
 
-.nav-item a {
-    margin-left: 0;
-    display: inline-block;
-    padding-right: 15px;
-    text-decoration: none;
-    background-color: #333333;
-}
+    .imgpadding {
+        width: 100%;
+        padding: 20px;
+        background-image: url(./padding.jpeg);
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
 
-aside{
-    background-color: #333333;
-    grid-area: asd;
-    padding: 80px;
-}
+    .imgmargin {
+        width: 100%;
+        padding: 20px;
+        background-image: url(./margin.PNG);
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
 
-#pic7{
-    max-width: 500px;
-    justify-self: center;
-    grid-area: asd;
-}
+    /* Add a card effect for articles */
+    .card {
+        background-color: white;
+        padding: 20px;
+        margin-top: 20px;
+    }
 
-#dscbtn {
-    padding: 20px;
-    background-color: #333333;
-    grid-area: dscbtn;
-}
+    .twomiddle {
+        float: left;
+        width: 50%;
+        padding: 10px;
+    }
 
+    .onemiddle {
+        float: left;
+        width: 100%;
+    }
 
+    .threemiddle {
+        float: left;
+        width: 33%;
+        padding: 10px;
+    }
 
-footer {
-    background-color: #333333;
-    grid-area: ftr;
-    margin-top: 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    /* Clear floats after the columns */
+    .row::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
 
-}
+    /* Footer */
+    .footer {
+        padding: 20px;
+        text-align: center;
+        background: #ddd;
+        margin-top: 20px;
+    }
 
+    /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 800px) {
+        .leftcolumn,
+        .rightcolumn,
+        .onemiddle,
+        .twomiddle,
+        .threemiddle {
+            width: 100%;
+            padding: 0;
+        }
+    }
 
+    /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+    @media screen and (max-width: 400px) {
+        .topnav a {
+            float: none;
+            width: 100%;
+        }
+    }
 
+    * {
+        box-sizing: border-box;
+    }
+
+    /* Add more styles for other classes as needed */
 </style>
